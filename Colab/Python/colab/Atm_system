@@ -1,0 +1,40 @@
+def Atm_system():
+    balance=452135
+    Currect_pin=1234
+
+    print('Welcome to ATM')
+    pin=int(input('Enter your pin:'))
+    if pin!=Currect_pin:
+      print('Incurrect pin')
+      return
+
+    while True:
+        print('''Option you can exercies are
+          1) balance
+          2) withdrawl
+          3) Deposit
+          4) exit
+          ''')
+        option=int(input('Enter your option:'))
+        if option==1:
+            print(f'Your balance is:{balance}')
+        elif option==2:
+            withdrawl=int(input('enter amaount'))
+            if withdrawl<=balance:
+                balance-=withdrawl
+                print('withdrawl is successfull')
+                print(f'Your balance is :{balance}')
+            else:
+                print('insufficient balance')
+        elif option==3:
+            deposit=int(input('enter amount'))
+            balance+=deposit
+            print('deposit is successfull')
+            print(f'Your balance is :{balance}')
+
+        elif option==4:
+            print('Thank you')
+            break
+        else:
+            print('Incurrect option')
+Atm_system()
